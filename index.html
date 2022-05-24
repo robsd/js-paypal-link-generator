@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+		<title>PayPal Link Generator</title>
+	</head>
+	<body>
+		<div class="container my-5">
+			<h1 class="mb-5">PayPal Link Generator</h1>
+			<div class="card mb-5">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-6 mb-5">
+							<label class="form-label">Currency:</label>
+							<select class="form-select" id="currency" onchange="changeSymbol();">
+								<option value="0" selected disabled>Please Select</option>
+								<option value="GBP">Pound sterling (£)</option>
+								<option value="USD">United States dollar ($)</option>
+								<option value="EUR">Euro (€)</option>
+								<optgroup label="Other Currencies">
+									<option value="AUD">Australian dollar ($)</option>
+									<option value="BRL">Brazilian real (R$)</option>
+									<option value="CAD">Canadian dollar ($)</option>
+									<option value="CNY">Chinese Renmenbi (¥)</option>
+									<option value="CZK">Czech koruna (Kč)</option>
+									<option value="DKK">Danish krone (kr)</option>
+									<option value="HKD">Hong Kong dollar ($)</option>
+									<option value="HUF">Hungarian forint (Ft)</option>
+									<option value="ILS">Israeli new shekel (₪)</option>
+									<option value="JPY">Japanese yen (¥)</option>
+									<option value="MYR">Malaysian ringgit (RM)</option>
+									<option value="MXN">Mexican peso ($)</option>
+									<option value="TWD">New Taiwan dollar (NT$)</option>
+									<option value="NZD">New Zealand dollar ($)</option>
+									<option value="NOK">Norwegian krone (kr)</option>
+									<option value="PHP">Philippine peso (₱)</option>
+									<option value="PLN">Polish złoty (zł)</option>
+									<option value="RUB">Russian ruble (₽)</option>
+									<option value="SGD">Singapore dollar ($)</option>
+									<option value="SEK">Swedish krona (kr)</option>
+									<option value="CHF">Swiss franc (CHF)</option>
+									<option value="THB">Thai baht (฿)</option>
+								</optgroup>
+							</select>
+						</div>
+						<div class="col-6 mb-5">
+							<label class="form-label">Amount:</label>
+							<div class="input-group">
+								<span class="input-group-text" id="currency-symbol">?</span>
+								<input class="form-control" type="number" id="amount" placeholder="1 or greater">
+							</div>
+						</div>
+					</div>
+					<div class="mb-5">
+						<label class="form-label">Item Name / Description:</label>
+						<input class="form-control" type="text" id="item-name" placeholder="Whatever you're selling">
+					</div>
+					<div class="mb-5">
+						<label class="form-label">PayPal Email Address:</label>
+						<input class="form-control" type="email" id="business" placeholder="your@email.example">
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Your PayPal Link:</label>
+						<input class="form-control" id="display-link" readonly>
+					</div>
+					<button class="btn btn-primary" onclick="generateLink();">Generate</button>
+				</div>
+			</div>
+			<p>Developed by <a href="https://robertd.co.uk">Robert Dixon</a></p>
+		</div>
+		<script src="js/script.js"></script>
+	</body>
+</html>
